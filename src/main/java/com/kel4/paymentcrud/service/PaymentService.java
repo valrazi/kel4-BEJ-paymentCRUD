@@ -65,7 +65,8 @@ public class PaymentService {
             updatePayment.setRentalId(payment.getRentalId());
             updatePayment.setAmount(payment.getAmount());
             updatePayment.setLastUpdate(payment.getLastUpdate());
-            return new ResponseEntity<>(updatePayment, HttpStatus.OK);
+
+            return new ResponseEntity<>(pr.save(updatePayment), HttpStatus.OK);
         }else{
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
