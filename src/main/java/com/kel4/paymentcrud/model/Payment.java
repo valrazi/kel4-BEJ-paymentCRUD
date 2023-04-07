@@ -11,8 +11,8 @@ import java.sql.Date;
 @Data
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int paymentId;
 
     @Column(name = "customer_id")
@@ -31,7 +31,6 @@ public class Payment {
     @Column(name = "payment_date", updatable = false)
     private Date paymentDate;
 
-    @Basic(optional = false)
     @Column(name = "last_update")
     private Date lastUpdate;
 
